@@ -1,0 +1,35 @@
+﻿@model List<Produs>
+
+@{
+    ViewData["Title"] = "Lista Produse";
+}
+
+<h3>Lista Produse</h3>
+<table class="table table-bordered table-striped">    
+    <thead>
+        <tr>
+            <th>Produs ID</th>
+            <th>Nume</th>
+            <th>Pret</th>
+            <th></th>
+        </tr>
+    
+    </thead>
+    <tbody>
+        @foreach(var produs in @Model)
+            {
+        <tr>
+            <td>@produs.ID</td>
+            <td>@produs.Nume</td>
+            <td>@($"{produs.Pret:C}")</td>
+            <td><a asp-controller="Produs" asp-action="DetaliiProdus" asp-route-articol="@produs.Nume">Vizualizare</a></td>
+        </tr>
+
+            }
+    </tbody>
+
+    
+
+</table>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>

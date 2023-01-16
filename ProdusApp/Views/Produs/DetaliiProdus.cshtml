@@ -1,0 +1,24 @@
+﻿@model Produs
+
+@{ 
+    ViewData["Title"] = "Detalii Produs";
+}
+
+<h3>Detalii Produs</h3>
+<table class="table table-bordered table-striped">
+    <tr>
+        <td>Produs ID</td>
+        <td>@Model.ID</td>
+    </tr>
+    <tr>
+        <td>Nume</td>
+        <td>@Model.Nume</td>
+    </tr>
+    <tr>
+        <td>Pret</td>
+        <td>@Model.Pret.ToString("c2")</td>
+    </tr>
+</table>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>
+   
